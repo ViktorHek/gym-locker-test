@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [lockers, setLockers] = useState([]);
+  const [selectedLocker, setSelectedLocker] = useState(null);
 
   useEffect(() => {
     init();
@@ -21,6 +22,7 @@ function App() {
   }
 
   function handleClick() {
+    removePreviousLocker();
     for (let index = 0; index < lockers.length; index++) {
       if (index > 0 && index < lockers.length - 1) {
         if (
@@ -42,9 +44,16 @@ function App() {
     }
   }
 
+  function removePreviousLocker() {
+    if(!selectedLocker) return 
+    lockers[selectedLocker - 1].available = false
+    setSelectedLocker(null);
+  }
+
   function selectLocker(id) {
     let selectedLocker = document.getElementById(id);
     selectedLocker.style.backgroundColor = "blue";
+    setSelectedLocker(id);
   }
 
   return (
