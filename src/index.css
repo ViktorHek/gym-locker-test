@@ -1,28 +1,78 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.locker-list-container {
+  background-color: #1e572d;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+  width: 100vw;
+  height: 90vh;
+}
+
+.inner-container {
+  height: 70%;
+  width: 70%;
+  flex-direction: column;
+  background-color: #e2ae3e;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #3e363f;
+  box-shadow: 10px 5px 15px rgba(62,54,63,0.5)
+}
+
+.text-container {
+  height: 30%;
+}
+
+.button-container {
+  height: 20%;
+  align-items: flex-start;
+}
+
+.button-container > button {
+  height: 50px;
+  width: 200px;
+  background-color: #1e572d;
+  border: 1px solid #3e363f;
+  box-shadow: 10px 5px 15px rgba(62,54,63,0.5);
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.5s;
+  color: #79ce7a;
+  transition-property: background-color, border, box-shadow, color;
+}
+
+.button-container > button:hover {
+  background-color: #24a746;
+  border: 1px solid #39173e;
+  box-shadow: 15px 10px 10px rgba(62,54,63,0.7);
+  color: #023003;
+}
+
+.locker-list-container {
   flex-wrap: wrap;
-  width: 50%;
+  height: 50%;
+  overflow-y: scroll;
 }
 
 .locker-container {
-  height: 20px;
-  width: 20px;
+  height: 40px;
+  width: 40px;
   margin: 5px;
+  border-radius: 5px;
+  border: 1px solid #3e363f;
+  box-shadow: 2px 5px 5px rgba(62,54,63,0.5);
+  transition: box-shadow 1s;
+}
+
+.locker-container:hover {  
+  box-shadow: 3px 6px 5px rgba(62,54,63,0.8);
 }
